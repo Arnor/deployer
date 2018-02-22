@@ -79,7 +79,7 @@ function str_contains(string $haystack, string $needle)
  *
  * This function used for create environment string.
  */
-function array_to_string(array $array): string
+function array_to_string(array $array)
 {
     return implode(' ', array_map(
         function ($key, $value) {
