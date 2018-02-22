@@ -9,5 +9,5 @@ namespace Deployer\Logger\Handler;
 
 interface HandlerInterface
 {
-    public function log(string $message);
+    public function log($message);
 }

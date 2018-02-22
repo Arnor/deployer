@@ -281,7 +281,7 @@ class ParallelExecutor implements ExecutorInterface
         return $input;
     }
 
-    private function generateArguments(): string
+    private function generateArguments()
     {
         $arguments = '';
 

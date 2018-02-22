@@ -121,7 +121,7 @@ class Collection implements CollectionInterface, \Countable
         return iterator_to_array($this);
     }
 
-    protected function throwNotFound(string $name)
+    protected function throwNotFound($name)
     {
         throw new \InvalidArgumentException("`$name` not found in collection.");
     }

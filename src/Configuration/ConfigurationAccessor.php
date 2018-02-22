@@ -29,7 +29,7 @@ trait ConfigurationAccessor
      * @param null $default
      * @return array|bool|int|string
      */
-    public function get(string $name, $default = null)
+    public function get($name, $default = null)
     {
         return $this->config->get($name, $default);
     }
@@ -40,7 +40,7 @@ trait ConfigurationAccessor
      * @param string $name
      * @return bool
      */
-    public function has(string $name)
+    public function has($name)
     {
         return $this->config->has($name);
     }
@@ -52,7 +52,7 @@ trait ConfigurationAccessor
      * @param array|bool|int|string $value
      * @return $this
      */
-    public function set(string $name, $value)
+    public function set($name, $value)
     {
         $this->config->set($name, $value);
         return $this;
@@ -65,7 +65,7 @@ trait ConfigurationAccessor
      * @param array $value
      * @return $this
      */
-    public function add(string $name, array $value)
+    public function add($name, array $value)
     {
         $this->config->add($name, $value);
         return $this;

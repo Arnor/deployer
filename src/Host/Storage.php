@@ -77,7 +77,7 @@ class Storage
      * @param Host $host
      * @param string $file
      */
-    public static function setup(Host $host, string $file)
+    public static function setup(Host $host, $file)
     {
         $persistentCollection = new PersistentCollection($file);
         $persistentCollection->load();

@@ -9,7 +9,7 @@ namespace Deployer\Logger\Handler;
 
 class NullHandler implements HandlerInterface
 {
-    public function log(string $message)
+    public function log($message)
     {
     }
 }

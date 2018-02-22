@@ -21,7 +21,7 @@ class Logger
         $this->handler = $handler;
     }
 
-    public function log(string $message)
+    public function log($message)
     {
         $this->handler->log("$message\n");
     }

@@ -262,7 +262,7 @@ class Task
     /**
      * @param string $task
      */
-    public function addBefore(string $task)
+    public function addBefore($task)
     {
         array_unshift($this->before, $task);
     }
@@ -270,7 +270,7 @@ class Task
     /**
      * @param string $task
      */
-    public function addAfter(string $task)
+    public function addAfter($task)
     {
         array_push($this->after, $task);
     }

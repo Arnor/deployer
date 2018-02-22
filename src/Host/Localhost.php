@@ -12,7 +12,7 @@ class Localhost extends Host
     /**
      * @param string $hostname
      */
-    public function __construct(string $hostname = 'localhost')
+    public function __construct($hostname = 'localhost')
     {
         parent::__construct($hostname);
     }

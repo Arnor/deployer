@@ -34,7 +34,7 @@ class ProcessRunner
      *
      * @throws ProcessFailedException When the process does not return a 0 exit code.
      */
-    public function run($hostname, string $command, array $config = [])
+    public function run($hostname, $command, array $config = [])
     {
         $defaults = [
             'timeout' => Deployer::getDefault('default_timeout', 300),

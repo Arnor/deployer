@@ -25,7 +25,7 @@ class Httpie
         }
     }
 
-    public static function get(string $url): Httpie
+    public static function get($url)
     {
         $http = new self;
         $http->method = 'GET';
@@ -33,7 +33,7 @@ class Httpie
         return $http;
     }
 
-    public static function post(string $url): Httpie
+    public static function post($url)
     {
         $http = new self;
         $http->method = 'POST';
@@ -41,21 +41,21 @@ class Httpie
         return $http;
     }
 
-    public function query(array $params): Httpie
+    public function query(array $params)
     {
         $http = clone $this;
         $http->url .= '?' . http_build_query($params);
         return $http;
     }
 
-    public function header(string $header): Httpie
+    public function header($header)
     {
         $http = clone $this;
         $http->headers[] = $header;
         return $http;
     }
 
-    public function body(array $data): Httpie
+    public function body(array $data)
     {
         $http = clone $this;
         $http->body = json_encode($data, JSON_PRETTY_PRINT);
@@ -66,7 +66,7 @@ class Httpie
         return $http;
     }
 
-    public function form(array $data): Httpie
+    public function form(array $data)
     {
         $http = clone $this;
         $http->body = http_build_query($data);

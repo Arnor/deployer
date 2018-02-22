@@ -73,7 +73,7 @@ class Informer
         }
     }
 
-    public function endOnHost(string $hostname)
+    public function endOnHost($hostname)
     {
         if ($this->output->getVerbosity() >= OutputInterface::VERBOSITY_VERBOSE) {
             $this->output->writeln("<info>•</info> done on [$hostname]");

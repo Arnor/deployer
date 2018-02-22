@@ -31,7 +31,7 @@ class Client
      */
     private $multiplexing;
 
-    public function __construct(OutputInterface $output, ProcessOutputPrinter $pop, bool $multiplexing)
+    public function __construct(OutputInterface $output, ProcessOutputPrinter $pop, $multiplexing)
     {
         $this->output = $output;
         $this->pop = $pop;
@@ -45,7 +45,7 @@ class Client
      * @return string
      * @throws RuntimeException
      */
-    public function run(Host $host, string $command, array $config = [])
+    public function run(Host $host, $command, array $config = [])
     {
         $hostname = $host->getHostname();
         $defaults = [

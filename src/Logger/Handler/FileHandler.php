@@ -14,12 +14,12 @@ class FileHandler implements HandlerInterface
      */
     private $filePath;
 
-    public function __construct(string $filePath)
+    public function __construct($filePath)
     {
         $this->filePath = $filePath;
     }
 
-    public function log(string $message)
+    public function log($message)
     {
         file_put_contents($this->filePath, $message, FILE_APPEND);
     }

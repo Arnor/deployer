@@ -29,7 +29,7 @@ class Host
     /**
      * @param string $hostname
      */
-    public function __construct(string $hostname)
+    public function __construct($hostname)
     {
         $this->hostname = $hostname;
         $this->setRealHostname($hostname);
@@ -87,7 +87,7 @@ class Host
      * @param string $hostname
      * @return $this
      */
-    public function hostname(string $hostname)
+    public function hostname($hostname)
     {
         $this->setRealHostname($hostname);
         return $this;
@@ -96,7 +96,7 @@ class Host
     /**
      * @param mixed $hostname
      */
-    private function setRealHostname(string $hostname)
+    private function setRealHostname($hostname)
     {
         $this->realHostname = preg_replace('/\/.+$/', '', $hostname);
     }
@@ -113,7 +113,7 @@ class Host
      * @param string $user
      * @return $this
      */
-    public function user(string $user)
+    public function user($user)
     {
         $this->user = $user;
         return $this;
@@ -131,7 +131,7 @@ class Host
      * @param int $port
      * @return $this
      */
-    public function port(int $port)
+    public function port($port)
     {
         $this->port = $port;
         return $this;
@@ -149,7 +149,7 @@ class Host
      * @param string $configFile
      * @return $this
      */
-    public function configFile(string $configFile)
+    public function configFile($configFile)
     {
         $this->configFile = $configFile;
         return $this;
@@ -167,7 +167,7 @@ class Host
      * @param string $identityFile
      * @return $this
      */
-    public function identityFile(string $identityFile)
+    public function identityFile($identityFile)
     {
         $this->identityFile = $identityFile;
         return $this;
@@ -185,7 +185,7 @@ class Host
      * @param bool $forwardAgent
      * @return $this
      */
-    public function forwardAgent(bool $forwardAgent = true)
+    public function forwardAgent($forwardAgent = true)
     {
         $this->forwardAgent = $forwardAgent;
         return $this;
@@ -203,7 +203,7 @@ class Host
      * @param bool $multiplexing
      * @return $this
      */
-    public function multiplexing(bool $multiplexing = true)
+    public function multiplexing($multiplexing = true)
     {
         $this->multiplexing = $multiplexing;
         return $this;
@@ -215,25 +215,25 @@ class Host
         return $this->sshArguments;
     }
 
-    public function sshOptions(array $options) : Host
+    public function sshOptions(array $options)
     {
         $this->sshArguments = $this->sshArguments->withOptions($options);
         return $this;
     }
 
-    public function sshFlags(array $flags) : Host
+    public function sshFlags(array $flags)
     {
         $this->sshArguments = $this->sshArguments->withFlags($flags);
         return $this;
     }
 
-    public function addSshOption(string $option, $value) : Host
+    public function addSshOption($option, $value)
     {
         $this->sshArguments = $this->sshArguments->withOption($option, $value);
         return $this;
     }
 
-    public function addSshFlag(string $flag, string $value = null) : Host
+    public function addSshFlag($flag, $value = null)
     {
         $this->sshArguments = $this->sshArguments->withFlag($flag, $value);
         return $this;
@@ -245,7 +245,7 @@ class Host
      * @param string $stage
      * @return $this
      */
-    public function stage(string $stage)
+    public function stage($stage)
     {
         $this->config->set('stage', $stage);
         return $this;
@@ -274,7 +274,7 @@ class Host
      * @param string $user
      * @return $this
      */
-    public function become(string $user)
+    public function become($user)
     {
         $this->config->set('become', $user);
         return $this;

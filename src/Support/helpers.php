@@ -69,7 +69,7 @@ function array_merge_alternate(array $original, array $override)
  * @param string $needle
  * @return bool
  */
-function str_contains(string $haystack, string $needle)
+function str_contains($haystack, $needle)
 {
     return strpos($haystack, $needle) !== false;
 }

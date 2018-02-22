@@ -34,7 +34,7 @@ class ProcessOutputPrinter
      *
      * @return callable A function expecting a int $type (e.g. Process::OUT or Process::ERR) and string $buffer parameters.
      */
-    public function callback(string $hostname)
+    public function callback($hostname)
     {
         return function ($type, $buffer) use ($hostname) {
             foreach (explode("\n", rtrim($buffer)) as $line) {
@@ -43,7 +43,7 @@ class ProcessOutputPrinter
         };
     }
 
-    public function command(string $hostname, string $command)
+    public function command($hostname, $command)
     {
         $this->logger->log("[$hostname] > $command");
 

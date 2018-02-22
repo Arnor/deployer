@@ -15,7 +15,7 @@ class Unix
      * @param string $path
      * @return string
      */
-    public static function parseHomeDir(string $path): string
+    public static function parseHomeDir($path)
     {
         if (isset($_SERVER['HOME'])) {
             $path = str_replace('~', $_SERVER['HOME'], $path);

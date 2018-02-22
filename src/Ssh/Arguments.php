@@ -43,18 +43,18 @@ class Arguments
         return trim(preg_replace('!\s+!', ' ', $args));
     }
 
-    public function getOption(string $option)
+    public function getOption($option)
     {
-        return $this->options[$option] ?? '';
+        return isset($this->options[$option]) ? $this->options[$option] : '';
     }
 
-    public function getFlag(string $flag)
+    public function getFlag($flag)
     {
         if (!array_key_exists($flag, $this->flags)) {
             return false;
         }
 
-        return $this->flags[$flag] ?? true;
+        return isset($this->flags[$flag]) ? $this->flags[$flag] : true;
     }
 
     public function withFlags(array $flags)
@@ -73,7 +73,7 @@ class Arguments
         return $clone;
     }
 
-    public function withFlag(string $flag, string $value = null)
+    public function withFlag($flag, $value = null)
     {
         $clone = clone $this;
         $clone->flags = array_merge($this->flags, [$flag => $value]);
@@ -81,7 +81,7 @@ class Arguments
         return $clone;
     }
 
-    public function withOption(string $option, string $value)
+    public function withOption($option, $value)
     {
         $clone = clone $this;
         $clone->options = array_merge($this->options, [$option => $value]);

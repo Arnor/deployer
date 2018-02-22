@@ -61,7 +61,7 @@ class RuntimeException extends Exception
     /**
      * @return string
      */
-    public function getHostname(): string
+    public function getHostname()
     {
         return $this->hostname;
     }
@@ -69,7 +69,7 @@ class RuntimeException extends Exception
     /**
      * @return int
      */
-    public function getCommand(): int
+    public function getCommand()
     {
         return $this->command;
     }

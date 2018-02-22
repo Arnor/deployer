@@ -14,7 +14,7 @@ class PersistentCollection extends Collection
      */
     private $file;
 
-    public function __construct(string $file, array $collection = [])
+    public function __construct($file, array $collection = [])
     {
         $this->file = $file;
         parent::__construct($collection);

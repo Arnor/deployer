@@ -40,7 +40,7 @@ set('laravel_version', function () {
 
     preg_match_all('/(\d+\.?)+/', $result, $matches);
 
-    $version = $matches[0][0] ?? 5.5;
+    $version = isset($matches[0][0]) ? $matches[0][0] : 5.5;
 
     return $version;
 });
